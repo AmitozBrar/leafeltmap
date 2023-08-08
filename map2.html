@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html style="height:100%">
+<head>
+<title> The Big Green</title>
+
+<meta name = "viewport" content="width=device-width, initial-scale =1.0">
+
+<link rel="stylesheet" href = "leaflet.css">
+
+<script src="leaflet.js">
+
+	
+</script>
+<style>
+	#map{height:180px;}
+</style>
+
+</head>
+<body style = "height: 100%; margin:0;">
+
+	
+	<!--<div id ="map" style = " width:100%; height:100%; background:#bfaf94; margin:0;">-->
+	<div id ="map" style = " width:100%; height:100%; background-color: #f8ead0; background-image: url('clouds2.png') ;background-position: center;
+	background-size: center; margin:0;">
+	
+
+	<script  type = "text/javascript">
+		
+		//icons 
+		
+		var iconCap = L.icon({
+			iconUrl: 'images/Capital_icon.png',
+    	iconSize: [40, 40],
+    	iconAnchor: [20, 20],
+    	popupAnchor: [0, -30],
+    	//shadowUrl: 'my-icon-shadow.png',
+    	shadowSize: [68, 95],
+    	shadowAnchor: [22, 94]
+		})
+
+		var RuinedCap = L.icon({
+			iconUrl: 'images/Ruined_Capital_Icon.png',
+    	iconSize: [40, 40],
+    	iconAnchor: [20, 20],
+    	popupAnchor: [0, -30],
+    	//shadowUrl: 'my-icon-shadow.png',
+    	shadowSize: [68, 95],
+    	shadowAnchor: [22, 94]
+
+		})
+
+		var MajCity = L.icon({
+			iconUrl: 'images/major_City_icon.png',
+    	iconSize: [40, 40],
+    	iconAnchor: [20, 20],
+    	popupAnchor: [0, -30],
+    	//shadowUrl: 'my-icon-shadow.png',
+    	shadowSize: [68, 95],
+    	shadowAnchor: [22, 94]
+		})
+
+		//var mapSW = [-1400 , 4000],
+		//	mapNE = [3500,-400];
+
+		
+
+		//map object
+		const map = L.map('map').setView([20,0],2);
+		
+		//reference and tiles
+		L.tileLayer('{z}/{x}/{y}.png',{
+			minZoom:1,
+			 maxZoom :3 
+			 ,continuousWorld: false,
+			  noWrap:true, 
+				crs: L.CRS.Simple,
+				
+			}).addTo(map);
+		
+		//map.setMaxBounds(new L.LatLngBounds(
+		//	map.unproject(mapSW,map.getMaxZoom()),
+		//	map.unproject(mapNE,map.getMaxZoom())) );
+
+		//map.setMaxBounds(map.getBounds())
+
+		
+
+		//var marker1 = L.marker([0,0]).addTo(map); //0,0 marker
+		//marker1.bindPopup('<b>center </b>');
+
+		//ACTIVE CAPITALS -------------------
+
+		var marker2 = L.marker([-16,83], {icon: iconCap}).addTo(map);
+		marker2.bindPopup('<img src="Page_7.png" width="200" height="240" > <br> <h2>Wormwood </h2>  <p> wood worms and such ya knnow when the worms they are in the woods</p>');
+
+		var marker3 = L.marker([0,-80], {icon: iconCap}).addTo(map);
+		marker3.bindPopup('<img src="Page_7.png" width="200" height="240" > <br> <h2>Honeyside </h2>  <p> wood worms and such ya knnow when the worms they are in the woods</p>');
+			
+		var marker4 = L.marker([10,-12], {icon: iconCap}).addTo(map);
+		marker4.bindPopup('<img src="Page_7.png" width="200" height="240" > <br> <h2>Clearwater </h2>  <p> wood worms and such ya knnow when the worms they are in the woods</p>');
+		
+		var marker5 = L.marker([50,-18], {icon: iconCap}).addTo(map);
+		marker5.bindPopup('<img src="Page_7.png" width="200" height="240" > <br> <h2>Stonewall </h2>  <p> wood worms and such ya knnow when the worms they are in the woods</p>');
+		
+		var marker6 = L.marker([-42,52], {icon: iconCap}).addTo(map);
+		marker6.bindPopup('<img src="Page_7.png" width="200" height="240" > <br> <h2>Starbor </h2>  <p> wood worms and such ya knnow when the worms they are in the woods</p>');
+		
+		var marker7 = L.marker([-70,37], {icon: iconCap}).addTo(map);
+		marker7.bindPopup('<img src="Page_7.png" width="200" height="240" > <br> <h2>Everglade </h2>  <p> wood worms and such ya knnow when the worms they are in the woods</p>');
+		
+		var marker8 = L.marker([79.5,-48], {icon: iconCap}).addTo(map);
+		marker8.bindPopup('<img src="Page_7.png" width="200" height="240" > <br> <h2>Dallas </h2>  <p> wood worms and such ya knnow when the worms they are in the woods</p>');
+		
+		var marker9 = L.marker([72.5,37], {icon: iconCap}).addTo(map);
+		marker9.bindPopup('<img src="Page_7.png" width="200" height="240" > <br> <h2>Los Angels </h2>  <p> wood worms and such ya knnow when the worms they are in the woods</p>');
+		
+		//RUINED CAPITALS
+
+		var marker10 = L.marker([68,-73], {icon: RuinedCap}).addTo(map);
+		marker10.bindPopup('<img src="Page_7.png" width="200" height="240" > <br> <h2>Doblin</h2>  <p> wood worms and such ya knnow when the worms they are in the woods</p>');
+		
+		var marker11 = L.marker([61,-32], {icon: RuinedCap}).addTo(map);
+		marker11.bindPopup('<img src="Page_7.png" width="200" height="240" > <br> <h2>Rat City</h2>  <p> wood worms and such ya knnow when the worms they are in the woods</p>');
+		
+		var marker12 = L.marker([20,53], {icon: RuinedCap}).addTo(map);
+		marker12.bindPopup('<img src="Page_7.png" width="200" height="240" > <br> <h2>Holt</h2>  <p> wood worms and such ya knnow when the worms they are in the woods</p>');
+		
+		//MINOR CITIES
+
+		var city1 = L.marker([-9,7], {icon: MajCity}).addTo(map);
+		var city2 = L.marker([-18,33], {icon: MajCity}).addTo(map);
+		var city3 = L.marker([-43,9], {icon: MajCity}).addTo(map);
+		var city4 = L.marker([-9,7], {icon: MajCity}).addTo(map);
+		var city5 = L.marker([-9,7], {icon: MajCity}).addTo(map);
+		var city6 = L.marker([-9,7], {icon: MajCity}).addTo(map);
+		var city7 = L.marker([-9,7], {icon: MajCity}).addTo(map);
+
+
+		
+	</script>
+</body>
+
+</html>
